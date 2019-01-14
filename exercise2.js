@@ -20,8 +20,8 @@ function getAndPrintHTML () {
     };  
   
     /* Add your code here */
-    let dataBuff = requestOptions.buffered;
-    // console.log(dataBuff);
+    let dataBuff = '';
+    console.log(dataBuff);
 
     https.get(requestOptions, function (response) {
 
@@ -30,13 +30,17 @@ function getAndPrintHTML () {
       
         // the callback is invoked when a `data` chunk is received
         response.on('data', function (data) {
-          console.log('Chunk Received:', data + "\n");
+            dataBuff += data;
+            
+            // console.log('Chunk Received:', dataBuff + "\n");
         });
       
         // the callback is invoked when all of the data has been received
-        // (the `end` of the stream)
+        // (the `end` of the stre
         response.on('end', function() {
           console.log('Response stream complete.');
+          console.log(dataBuff);
+
         });
   
   })
