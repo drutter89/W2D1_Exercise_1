@@ -7,8 +7,6 @@
 // Buffering in this context means the technique you've used before (usually in 
 // loops or conditionals) of creating an empty variable and adding data to it.
 
-
-
 var https = require('https');                               
 
 
@@ -21,7 +19,7 @@ function getAndPrintHTML () {
   
     /* Add your code here */
     let dataBuff = '';
-    console.log(dataBuff);
+    // console.log(dataBuff);
 
     https.get(requestOptions, function (response) {
 
